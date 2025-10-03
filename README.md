@@ -4,7 +4,7 @@ Bienvenidos al proyecto **Resort Manager**, un sistema de gestión de resort dis
 
 ## 🏨 Presentación general
 
-**Resort Manager** es un software de consola que permite registrar clientes, gestionar la demanda, calcular costos, ventas y ganancias, además de generar reportes administrativos. Su objetivo es optimizar la atención en un resort mediante un sistema organizado y eficiente.
+**Resort Manager** es un espacio pensado para brindar a cada visitante una experiencia única, donde la comodidad y el descanso son nuestra prioridad. Contamos con un software de consola que permite registrar clientes, gestionar la demanda, calcular costos, ventas y ganancias, además de generar reportes administrativos. Su objetivo es optimizar la atención en un resort mediante un sistema organizado y eficiente.
 
 ## 🎨 Logo representativo
 
