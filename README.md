@@ -19,7 +19,6 @@ El resort está compuesto por:
 * Zona de alimentación (restaurante y snack bar).
 * Área de turismo y recreación.
 * Recepción y registro de clientes.
-  *(Adjuntar un esquema o imagen sencilla del layout)*
 
 ## 📖 Descripción del proyecto
 
@@ -34,8 +33,8 @@ Este proyecto consiste en el desarrollo de un software en Python con el fin de s
 
 ## 👥 Equipo desarrollador
 
-* **Sebastian Chapetón Herrera** – Ingeniería Industrial – Habilidad en programación. Rol: líder de equipo y gestión de GitHub.
-* **Edgardo Fernandez Lambraño** – Ingeniería Industrial – Habilidad en documentación y análisis. Rol: redacción de informes.
+* **Sebastian Chapetón Herrera** – Ingeniería Industrial – Habilidad en cretividad. Rol: líder de equipo y gestión de GitHub.
+* **Edgardo Fernandez Lambraño** – Ingeniería Industrial – Habilidad en programación. Rol: Revisión y aceptacion de codigos en Phyton
 
 **Líder del equipo:** Sebastian Chapetón Herrera
 
