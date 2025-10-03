@@ -34,11 +34,9 @@ Este proyecto consiste en el desarrollo de un software en Python con el fin de s
 
 ## 👥 Equipo desarrollador
 
-* **Nombre integrante 1** – Ingeniería Industrial – Habilidad en programación. Rol: líder de equipo y gestión de GitHub.
-* **Nombre integrante 2** – Ingeniería Industrial – Habilidad en documentación y análisis. Rol: redacción de informes.
-* **Nombre integrante 3** – Ingeniería Industrial – Habilidad en algoritmos. Rol: diseño de estructuras de datos y lógica del programa.
-* **Nombre integrante 4** – Ingeniería Industrial – Habilidad creativa. Rol: diseño visual y logo del proyecto.
+* **Sebastian Chapetón Herrera** – Ingeniería Industrial – Habilidad en programación. Rol: líder de equipo y gestión de GitHub.
+* **Edgardo Fernandez Lambraño** – Ingeniería Industrial – Habilidad en documentación y análisis. Rol: redacción de informes.
 
-**Líder del equipo:** [Nombre del líder]
+**Líder del equipo:** Sebastian Chapetón Herrera
 
 ---
