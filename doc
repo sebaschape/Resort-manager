@@ -1,18 +1,18 @@
-Manual de Usuario – Sistema de Gestión “Resort Manager”
+#Manual de Usuario – Sistema de Gestión “Resort Manager”
 
-OBJETIVO DEL PROGRAMA
+#OBJETIVO DEL PROGRAMA
 El sistema “Resort Manager” permite registrar clientes, administrar inventarios, gestionar ventas, costos, ganancias y exportar datos a CSV.
 
-MENÚ PRINCIPAL
+3MENÚ PRINCIPAL
 1. Planeación de la demanda
 2. Registrar llegada de clientes
 3. Módulo administrador
 4. Salir
 
-1. PLANEACIÓN DE LA DEMANDA
+#1. PLANEACIÓN DE LA DEMANDA
 Permite actualizar inventarios de habitaciones, turismo y alimentación. Solo se aceptan números.
 
-2. REGISTRAR CLIENTES
+#2. REGISTRAR CLIENTES
 Permite registrar reservas:
 - Individual (1 persona)
 - Pareja (2 personas)
@@ -20,7 +20,7 @@ Permite registrar reservas:
 
 Incluye ingreso de datos personales, validación de documentos, registro de mascotas, selección de turismo y alimentación. Calcula ventas, costos y ganancias automáticamente.
 
-3. MÓDULO ADMINISTRADOR
+#3. MÓDULO ADMINISTRADOR
 Requiere usuario y contraseña.
 Opciones:
 - Total de clientes
@@ -30,7 +30,7 @@ Opciones:
 - Total mascotas
 - Inventarios de alimentación y turismo
 
-4. EXPORTAR DATOS
+#4. EXPORTAR DATOS
 Al salir, el usuario puede exportar:
 - clientes.csv
 - totales.csv
