@@ -39,6 +39,9 @@ Este proyecto consiste en el desarrollo de un software en Python con el fin de s
 **Líder del equipo:** Sebastian Chapetón Herrera
 
 
+
+
+
 # Plan de Versionado
 
 ## Semana 22 de de octubre (primera semana)
