@@ -1,1 +1,254 @@
+import csv
 
+habitaciones = {"individual": 10,"pareja": 10,"familia": 10}
+turismo = {"tour_basico": 20,"tour_premium": 15}
+alimentacion = {"desayuno": 50,"almuerzo": 50,"cena": 50}
+clientes_registrados = []
+ventas = 0
+costos = 0
+ganancia = 0
+total_mascotas = 0
+
+usuarios_admin = {"sebastian": "1234","edgardo" : "1234","catalina": "1234"}
+precios = {"individual": 100, "pareja": 180, "familia": 320,"mascota": 30,"tour_basico": 50,"tour_premium": 90,"desayuno": 10,"almuerzo": 20,"cena": 15}
+costos_fijos = {"individual": 40,"pareja": 60,"familia": 120}
+
+def validar_nombre(texto):
+    return len(texto) >= 3 and texto.isalpha()
+
+def validar_documento(doc):
+    return doc.isdigit() and 3 <= len(doc) <= 15
+
+def planear_demanda():
+    print("--- PLANEACIÓN DE DEMANDA ---")
+    for key in habitaciones:
+        while True:
+            nuevo = input(f"Ingrese cantidad disponible para habitaciones tipo {key}: ")
+            if nuevo.isdigit():
+                habitaciones[key] = int(nuevo)
+                break
+            else:
+                print("Error: Debe ingresar un número entero.")
+
+    print("Actualice el inventario de turismo:")
+    for key in turismo:
+        while True:
+            nuevo = input(f"Cantidad disponible para {key}: ")
+            if nuevo.isdigit():
+                turismo[key] = int(nuevo)
+                break
+            else:
+                print("Error: Debe ingresar un número entero.")
+
+    print("\nActualice inventario de alimentación:")
+    for key in alimentacion:
+        while True:
+            nuevo = input(f"Cantidad disponible para {key}: ")
+            if nuevo.isdigit():
+                alimentacion[key] = int(nuevo)
+                break
+            else:
+                print("Error: Debe ingresar un número entero.")
+
+    print("Planeación actualizada exitosamente.")
+
+def registrar_cliente():
+    global ventas, costos, ganancia, total_mascotas
+
+    print("--- REGISTRO DE CLIENTES ---")
+    print("1. Individual (1 persona)")
+    print("2. Pareja (2 personas)")
+    print("3. Familia (4 personas)")
+
+    opcion = input("Seleccione el tipo de reserva: ")
+
+    if opcion == "1": tipo, cantidad = "individual", 1
+    elif opcion == "2": tipo, cantidad = "pareja", 2
+    elif opcion == "3": tipo, cantidad = "familia", 4
+    else:
+        print("Opción no válida.")
+        return
+
+    if habitaciones[tipo] <= 0:
+        print("No hay disponibilidad para este tipo.")
+        return
+
+    grupo = []
+    print(f"Ingrese datos de las {cantidad} personas:")
+
+    for i in range(cantidad):
+        print(f"Persona {i+1}:")
+        nombre = input("Nombre: ")
+        while not validar_nombre(nombre):
+            print("Nombre inválido.")
+            nombre = input("Nombre: ")
+
+        apellido = input("Apellido: ")
+        while not validar_nombre(apellido):
+            print("Apellido inválido.")
+            apellido = input("Apellido: ")
+
+        doc = input("Documento: ")
+        while not validar_documento(doc):
+            print("Documento inválido.")
+            doc = input("Documento: ")
+
+        grupo.append({"nombre": nombre, "apellido": apellido, "documento": doc, "tipo": tipo})
+
+    clientes_registrados.extend(grupo)
+    habitaciones[tipo] -= 1
+
+    ventas += precios[tipo]
+    costos += costos_fijos[tipo]
+
+    mascota = input("¿Trae mascota? (si/no): ").lower()
+    if mascota == "si":
+        ventas += precios["mascota"]
+        total_mascotas += 1
+        print("Mascota registrada.")
+
+    print("\nTIPOS DE TURISMO DISPONIBLES:")
+    print("1. Tour básico")
+    print("2. Tour premium")
+
+    opcion_turismo = input("Seleccione una opción de turismo: ")
+
+    if opcion_turismo == "1" and turismo["tour_basico"] > 0:
+        turismo["tour_basico"] -= 1
+        ventas += precios["tour_basico"]
+    elif opcion_turismo == "2" and turismo["tour_premium"] > 0:
+        turismo["tour_premium"] -= 1
+        ventas += precios["tour_premium"]
+    else:
+        print("Opción no válida o sin disponibilidad. No se registrará turismo.")
+
+    print("SELECCIONE ALIMENTACIÓN (cantidad por persona):")
+
+    for comida in ["desayuno", "almuerzo", "cena"]:
+        cant = input(f"¿Cuántos '{comida}' desea? (0 si no desea): ")
+
+        if cant.isdigit():
+            cant = int(cant)
+            if cant <= alimentacion[comida]:
+                alimentacion[comida] -= cant
+                ventas += precios[comida] * cant
+            else:
+                print(f"No hay suficiente {comida} en inventario.")
+        else:
+            print("Cantidad inválida. Se registrará 0.")
+
+    ganancia = ventas - costos
+    print("Registro exitoso.")
+
+def modulo_admin():
+    print("--- ACCESO ADMINISTRADOR ---")
+    usuario = input("Ingrese su usuario: ")
+    clave = input("Ingrese su contraseña: ")
+
+    if usuario in usuarios_admin and usuarios_admin[usuario] == clave:
+        print("Bienvenido,", usuario)
+        admin_menu()
+    else:
+        print("Acceso denegado.")
+
+def admin_menu():
+    while True:
+        print("--- MENÚ ADMINISTRADOR ---")
+        print("1. Total de clientes")
+        print("2. Total por tipo de habitación")
+        print("3. Disponibilidad de habitaciones")
+        print("4. Ventas")
+        print("5. Costos")
+        print("6. Ganancia")
+        print("7. Total de mascotas")
+        print("8. Disponibilidad de alimentación")
+        print("9. Disponibilidad de turismo")
+        print("10. Volver")
+
+        opcion = input("Seleccione opción: ")
+
+        if opcion == "1":
+            print(f"Total clientes: {len(clientes_registrados)}")
+
+        elif opcion == "2":
+            conteo = {"individual": 0, "pareja": 0, "familia": 0}
+            for c in clientes_registrados:
+                conteo[c["tipo"]] += 1
+            print(conteo)
+
+        elif opcion == "3":
+            print(habitaciones)
+
+        elif opcion == "4":
+            print(f"Ventas: ${ventas}")
+
+        elif opcion == "5":
+            print(f"Costos: ${costos}")
+
+        elif opcion == "6":
+            print(f"Ganancia: ${ganancia}")
+
+        elif opcion == "7":
+            print(f"Total de mascotas registradas: {total_mascotas}")
+
+        elif opcion == "8":
+            print("Disponibilidad alimentación:", alimentacion)
+
+        elif opcion == "9":
+            print("Disponibilidad turismo:", turismo)
+
+        elif opcion == "10":
+            return
+        else:
+            print("Opción no válida.")
+
+def exportar_csv():
+    print("Exportando datos...")
+
+    with open("clientes.csv", "w", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow(["Nombre", "Apellido", "Documento", "Tipo"])
+        for c in clientes_registrados:
+            writer.writerow([c["nombre"], c["apellido"], c["documento"], c["tipo"]])
+
+    with open("totales.csv", "w", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow(["Ventas", "Costos", "Ganancia"])
+        writer.writerow([ventas, costos, ganancia])
+
+    print("Archivos exportados correctamente.\n")
+
+def menu_principal():
+    while True:
+        print("\n=== SISTEMA DE GESTIÓN · RESORT MANAGER===")
+        print("1. Planeación de la demanda")
+        print("2. Registrar llegada de clientes")
+        print("3. Módulo administrador")
+        print("4. Salir")
+
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == "1":
+            planear_demanda()
+        elif opcion == "2":
+            registrar_cliente()
+        elif opcion == "3":
+            modulo_admin()
+        elif opcion == "4":
+            while True:
+                exp = input("¿Desea exportar datos a CSV? (si/no): ").lower()
+                if exp == "si":
+                    exportar_csv()
+                    print("Datos exportados correctamente.")
+                    break
+                elif exp == "no":
+                    print("No se exportarán los datos.")
+                    break
+                else:
+                    print("Respuesta no válida.")
+            print("Gracias por usar el sistema.")
+            break
+        else:
+            print("Opción no válida.")
+
+menu_principal()
