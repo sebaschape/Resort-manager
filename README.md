@@ -38,4 +38,49 @@ Este proyecto consiste en el desarrollo de un software en Python con el fin de s
 
 **Líder del equipo:** Sebastian Chapetón Herrera
 
----
+
+### Plan de Versionado
+
+## Semana 22 de de octubre (primera semana)
+# (TRABAJADO POR EDGARDO Y SEBASTIAN)
+Tiempo invertido: 3 horas
+Lectura de la entrega y asignación de tareas.
+Repaso de lo hecho en la primera entrega.
+Planificación de los tiempos.
+
+## Semana 28 de octubre
+# (TRABAJADO POR EDGARDO Y SEBASTIAN)
+Tiempo invertido: 4 horas
+Empezamos el plan
+Inicio de codificación 
+Búsqueda de información 
+
+## Semana 3 de noviembre
+# (TRABAJADO POR EDGARDO Y SEBASTIAN)
+Tiempo invertido: 5 horas
+Correcciones Código
+Empezar instrucciones para manual de uso
+Empezar plan versionado
+
+## Semana 10 de noviembre
+# (TRABAJADO POR EDGARDO Y SEBASTIAN)
+Tiempo invertido: 5 horas
+Ver funcionamiento del Código y jugar con el.
+Corregir errores
+continuación del manual de usuario
+
+## Semana 17 de noviembre
+# (TRABAJADO POR EDGARDO Y SEBASTIAN)
+Tiempo invertido:5 horas
+Aplicación de las funciones y todo lo aprendido en clase para lograr lo que queríamos en el Código.
+Verificación que el Código funcione correctamente.
+Gran avance del manual de uso.
+
+## Semana 24 de noviembre (Actual)
+# (TRABAJADO POR EDGARDO Y SEBASTIAN)
+Tiempo invertido:6 horas
+Ultimar y pulir detalles del código
+Verificar que corra y realice lo que buscamos
+Terminación del manual
+Terminación de lo planificado
+
